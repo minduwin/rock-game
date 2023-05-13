@@ -47,3 +47,28 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 };
+
+// ** Game Engine **
+// User type his/her choice and then the input is put in lower case letter
+// The program display user/computer choice
+// playRound function is invoked, and it'll be iterate in For loop for 3x
+function game() {
+    for (let i = 1; i <= 3; i++) {
+        const userChoice = prompt("Rock, Paper or Scissor: pick one: ");
+        const playerSelection = userChoice.toLowerCase();
+        alert(`You play: ${playerSelection}  -  Computer play: ${computerSelection}`);
+        playRound(playerSelection, computerSelection);
+    }
+};
+
+// Finally the game() is invoked
+// And will display the points of both players
+game();
+alert(`Your points: ${yourPoints}  -  Computer' points: ${computerPoints}`);
+if (yourPoints > computerPoints) {
+    alert('YOU win!');
+} else if (yourPoints < computerPoints) {
+    alert('Computer win!')
+} else {
+    alert('Draw. Play again!!')
+}
